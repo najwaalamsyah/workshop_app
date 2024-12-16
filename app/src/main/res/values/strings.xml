@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Workshop App</string>
+    <string name="all_fields_required" />
+    <string name="registration_successful" />
+    <string name="registration_failed" />
+
+    <string-array name="number_of_persons">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+        <string-array name="payment_methods">
+            <item>Credit Card</item>
+            <item>Bank Transfer</item>
+            <item>Cash</item>
+        </string-array>
+
+</resources>

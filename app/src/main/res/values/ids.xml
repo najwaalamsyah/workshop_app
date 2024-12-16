@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="poetrybutton" type="id" />
+    <item name="btnHome" type="id" />
+    <item name="btnTicket" type="id" />
+</resources>
