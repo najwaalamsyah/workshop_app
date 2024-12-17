@@ -61,6 +61,7 @@ public class TicketHistory extends AppCompatActivity {
                         HashMap<String, String> ticket = new HashMap<>();
                         ticket.put("name", document.getString("name"));
                         ticket.put("phone", document.getString("phone"));
+                        ticket.put("description", document.getString("description"));
                         ticket.put("totalPerson", document.getString("totalPerson"));
                         ticket.put("amount", document.getString("amount"));
                         ticket.put("paymentMethod", document.getString("paymentMethod"));
