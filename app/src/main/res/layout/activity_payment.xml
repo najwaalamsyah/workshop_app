@@ -11,121 +11,115 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="118dp"
-        android:src="@drawable/headerpayment"/>
+        android:src="@drawable/headerpayment" />
 
-    <LinearLayout
+    <!-- Scrollable Content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <ImageView
-            android:id="@+id/imgKTP"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:background="#E0E0E0"
-            android:contentDescription="KTP Photo Preview"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"/>
-
-        <!-- Add Photo Button -->
-
-        <!-- Name Text Field -->
-        <Button
-            android:id="@+id/btnTakePhoto"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Take Photo of KTP"
-            android:backgroundTint="#11235D"
-            android:clickable="true"
-            android:layout_gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="14dp"
-        android:layout_marginRight="14dp">
-
-        <EditText
-            android:id="@+id/etName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
-            android:background="@drawable/custom_edittext"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            android:textColorHighlight="@color/cardview_dark_background"
-            android:layout_marginTop="20dp"/>
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="No. Phone"
-            android:background="@drawable/custom_edittext"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            android:textColorHighlight="@color/cardview_dark_background" />
+            <!-- Image Preview and Button -->
+            <ImageView
+                android:id="@+id/imgKTP"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="#E0E0E0"
+                android:contentDescription="KTP Photo Preview"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp" />
 
-        <EditText
-            android:id="@+id/etDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Description"
-            android:background="@drawable/custom_edittext"
-            android:inputType="textAutoComplete"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            android:textColorHighlight="@color/cardview_dark_background" />
+            <Button
+                android:id="@+id/btnTakePhoto"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Take Photo of KTP"
+                android:backgroundTint="#11235D"
+                android:layout_gravity="center" />
 
-        <Spinner
-            android:id="@+id/spinnerPerson"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext"
-            android:textColor="@color/black"
-            android:padding="8dp"
-            android:textColorHighlight="@color/cardview_dark_background"
-            android:spinnerMode="dropdown" />
+            <!-- Input Fields -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp">
 
-        <!-- Amount Text Field -->
-        <EditText
-            android:id="@+id/etAmount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Total Amount"
-            android:background="@drawable/custom_edittext"
-            android:inputType="numberDecimal"
-            android:padding="8dp"
-            android:textColorHighlight="@color/cardview_dark_background"
-            android:layout_marginTop="20dp"/>
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:background="@drawable/custom_edittext"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="16dp"
+                    android:padding="8dp" />
 
-        <!-- Payment Method Dropdown -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Payment Method"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/cardview_dark_background"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="15dp"
-            android:textSize="18dp"/>
-        <Spinner
-            android:id="@+id/spinnerPaymentMethod"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            android:entries="@array/payment_methods" />
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="No. Phone"
+                    android:background="@drawable/custom_edittext"
+                    android:inputType="numberDecimal"
+                    android:layout_marginBottom="16dp"
+                    android:padding="8dp" />
 
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:background="@drawable/custom_edittext"
+                    android:inputType="textAutoComplete"
+                    android:layout_marginBottom="16dp"
+                    android:padding="8dp" />
 
+                <Spinner
+                    android:id="@+id/spinnerPerson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_edittext"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Total Amount"
+                    android:background="@drawable/custom_edittext"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Method"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerPaymentMethod"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:padding="8dp"
+                    android:entries="@array/payment_methods" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -133,7 +127,6 @@
         android:layout_marginTop="20dp"
         android:gravity="center">
 
-        <!-- Submit Button -->
         <Button
             android:id="@+id/btnPrevious"
             android:layout_width="wrap_content"
@@ -148,8 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirm"
-            android:backgroundTint="#11235D"/>
-
+            android:backgroundTint="#11235D" />
     </LinearLayout>
 
 </LinearLayout>
