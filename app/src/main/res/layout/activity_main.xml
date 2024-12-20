@@ -15,319 +15,107 @@
         app:srcCompat="@drawable/headerflag"
         android:contentDescription="Flag Workshop" />
 
+    <!-- Main Content Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_below="@id/imageView3">
+        android:layout_below="@id/imageView3"
+        android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        <!-- Scrollable Content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="end"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end">
+
+                        <ImageView
+                            android:id="@+id/btnChat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:srcCompat="@drawable/ic_chat"
+                            android:contentDescription="Chat Button" />
+
+                        <ImageView
+                            android:id="@+id/btnTicket"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_ticket"
+                            android:contentDescription="Ticket Button" />
+
+                        <ImageView
+                            android:id="@+id/btnAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_add"
+                            android:contentDescription="Add Button" />
+                    </LinearLayout>
+
+                    <!-- VideoView to display a sample video -->
+                    <VideoView
+                        android:id="@+id/videoView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <!-- RecyclerView for Workshops -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewWorkshops"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Footer with Contact Information -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:background="#1E3A8A"
+            android:padding="16dp"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginEnd="16dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="8dp"
+                android:text="+62812 9447 0055"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@id/btnTicket"
-                    android:layout_width="38dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/ic_ticket" />
-
-                <VideoView
-                    android:id="@+id/videoView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center_horizontal" />
-            </LinearLayout>
-
-            <!-- Painting Class Card -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="398dp"
-                android:layout_marginBottom="12dp"
-                android:elevation="2dp"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="Painting Class Image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/paintingclass" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"
-                    android:text="Painting Class"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="Wednesday, 21 Dec"
-                    android:textColor="#888888" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:drawableStart="@drawable/ic_location"
-                    android:drawablePadding="5dp"
-                    android:text="Jakarta, ID"
-                    android:textColor="#888888" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="5dp"
-                    android:text="20 person"
-                    android:textColor="#888888" />
-
-                <Button
-                    android:id="@+id/paintingbutton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#11235D"
-                    android:drawablePadding="8dp"
-                    android:text="Rp. 80.000"
-                    android:textSize="16sp"
-                    android:layout_gravity="end"/>
-            </LinearLayout>
-
-            <!-- Pottery Class Card -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/potteryclass"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="Pottery class Image" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pottery Class"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wednesday, 22 Jan"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_location"
-                    android:drawablePadding="5dp"
-                    android:text="Surabaya, ID"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="5dp"
-                    android:text="15 person"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <Button
-                    android:id="@+id/potterybutton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:backgroundTint="#11235D"
-                    android:text="Rp. 150.000"
-                    android:textSize="16sp"
-                    android:layout_gravity="end"/>
-                </LinearLayout>
-
-            <!-- Flowers Workshop Card -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/flowerclass"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="flowers workshop Image" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Flower Class"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sunday, 10 Dec"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_location"
-                    android:drawablePadding="5dp"
-                    android:text="Bandung, ID"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="5dp"
-                    android:text="25 person"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <Button
-                    android:id="@+id/flowerbutton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:backgroundTint="#11235D"
-                    android:text="Rp. 70.000"
-                    android:textSize="16sp"
-                    android:layout_gravity="end"/>
-
-            </LinearLayout>
-
-            <!-- Pizza class Card -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"
-                android:elevation="2dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/pizzaclass"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="Pizza Making Class Image" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pizza Making Class"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Saturday, 16 Dec"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_location"
-                    android:drawablePadding="5dp"
-                    android:text="Bali, ID"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="5dp"
-                    android:text="10 person"
-                    android:textColor="#888888"
-                    android:layout_marginBottom="8dp" />
-
-                <Button
-                    android:id="@+id/pizzabtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:backgroundTint="#11235D"
-                    android:text="Rp. 130.000"
-                    android:textSize="16sp"
-                    android:layout_gravity="end"/>
-            </LinearLayout>
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="8dp"
+                android:text="workshop@gmail.com"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
-
-    <!-- Footer with Contact Information -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#1E3A8A"
-        android:padding="16dp"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/ic_phone"
-            android:drawablePadding="8dp"
-            android:text="+62812 9447 0055"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="8dp"
-            android:text="workshop@gmail.com"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-    </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

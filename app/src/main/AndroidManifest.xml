@@ -38,6 +38,9 @@
         <activity android:name=".MainActivity" android:exported="true" />
         <activity android:name=".TicketHistory" android:exported="true" />
         <activity android:name=".PaymentActivity" android:exported="true" />
+        <activity android:name=".ChatBotActivity" android:exported="true" />
+        <activity android:name=".UploadActivity" android:exported="true" />
+
     </application>
 
 </manifest>
